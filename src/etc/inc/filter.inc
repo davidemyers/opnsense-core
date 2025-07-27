@@ -314,6 +314,7 @@ function filter_configure_sync($verbose = false, $load_aliases = true)
     } else {
         $limitrules .= "set optimization normal\n";
     }
+    $limitrules .= "set timeout { udp.multiple 120 }\n";
 
     if (!empty($config['system']['adaptivestart']) && !empty($config['system']['adaptiveend'])) {
         $limitrules .= "set timeout { adaptive.start {$config['system']['adaptivestart']}, adaptive.end {$config['system']['adaptiveend']} }\n";
